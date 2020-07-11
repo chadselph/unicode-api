@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--<html manifest="unicodeapp.manifest">-->
+<html>
+<head>
+
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="apple-touch-icon" href="icon.png"/>
+
+    <link rel="apple-touch-startup-image" href="splash.png" />
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen, mobile" title="main" charset="utf-8">
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="underscore-min.js"></script>
+    <script type="text/javascript" src="backbone-min.js"></script>
+
+    <title>Unicode Tool</title>
+</head>
+<body>
+    <div class="main">
+    </div>
+    <script type="text/template" id="template">
+        <input type="text" value="<%= raw %>" id="input"></input>
+        <button id="reverse_lookup">Lookup Codepoint</button>
+        <button id="lookup">Lookup Character</button>
+        <% if (codepoint) { %>
+            <dl>
+                <dt>Codepoint</dt>
+                <dd><%= codepoint %> (<%= integer_codepoint %>)</dd>
+
+                <dt>Description</dt>
+                <dd><%= name %></dd>
+
+                <dt>Encodings</dt>
+                <dd>
+                    <dl>
+                        <% for(var enc in encodings) { 
+                            var obj = encodings[enc];    
+                        %>
+                            <dt><%= enc %></dt>
+                            <dd>
+                                <% for (var _b in obj)  { 
+                                    var b = obj[_b];
+                                %>
+                                    <span class="bytes"><%= b %></span>
+                                <% } %>
+                            </dd>
+                        <% } %>
+                    </dl>
+                </dd>
+            </dl>
+        <% } %>
+    </script>
+    <script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>

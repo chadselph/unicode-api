@@ -1,0 +1,32 @@
+* { margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, sans-serif; font-size: 20px; color: #0d0d0d; }
+
+#input {
+    height: 20pt;
+    width: 50pt;
+}
+button {
+    display: block;
+}
+
+dl {
+    text-align: left;
+}
+
+dd { margin-left: 20px; }
+
+.main dt {
+    font-weight: bold;
+}
+
+.main dd {
+
+}
+
+.bytes {
+    font-family: monospace;
+    color: #4a4;
+    background: #333;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: bolder;
+}
